@@ -23,10 +23,6 @@ The PowerShell script (persist.ps1) adds a registry entry under the current user
 -Customizable IP address and port to suit your testing environment
 
 # Usage
-Setting Up the Persistence Script
-
-Edit the Script:
-
 -Open Persistence.ps1 in your favorite text editor
 
 -Update the variable $payloadPath with the full path to your payload executable (e.g., C:\RedTeam\ReverseShellPayload.exe)
@@ -41,11 +37,11 @@ Execute the script:
 
         .\Persistence.ps1
 
--The script will create a registry entry that ensures the payload runs at every user logon.
+The script will create a registry entry that ensures the payload runs at every user logon.
 
 Building and Deploying the C# Payload
 
- Open the ReverseShellPayload.cs file.
+ Open the ReverseShellPayload.cs file
 
  Update the variables attackerIP and attackerPort with your controlled server’s IP address and port number.
 
