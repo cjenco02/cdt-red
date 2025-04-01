@@ -4,36 +4,34 @@ PowerShell Persistence Script
 
 The PowerShell script (persist.ps1) adds a registry entry under the current user’s run key to ensure that a specified payload is executed at every user logon.
 
-Key features:
+# Key features:
 
-Modifiable payload path.
+-Modifiable payload path
 
-Uses the HKCU:\Software\Microsoft\Windows\CurrentVersion\Run registry key.
+-Uses the HKCU:\Software\Microsoft\Windows\CurrentVersion\Run registry key
 
-Easy integration with any payload executable.
+-Easy integration with any payload executable
 
-C# Reverse Shell Payload
+-C# Reverse Shell Payload
 
-The C# payload (ReverseShellPayload.cs) establishes a reverse TCP connection to an attacker‑controlled server and launches a hidden instance of cmd.exe whose input and output are piped over the network.
+-The C# payload (ReverseShellPayload.cs) establishes a reverse TCP connection to an attacker‑controlled server and launches a hidden instance of cmd.exe whose input and output are piped over the network
 
-Key features:
+-Reverse shell functionality for remote command execution
 
-    Reverse shell functionality for remote command execution.
+-Asynchronous handling of command output
 
-    Asynchronous handling of command output.
+-Customizable IP address and port to suit your testing environment
 
-    Customizable IP address and port to suit your testing environment.
-
-Usage
+# Usage
 Setting Up the Persistence Script
 
 Edit the Script:
 
-Open Persistence.ps1 in your favorite text editor.
+-Open Persistence.ps1 in your favorite text editor
 
-Update the variable $payloadPath with the full path to your payload executable (e.g., C:\RedTeam\ReverseShellPayload.exe).
+-Update the variable $payloadPath with the full path to your payload executable (e.g., C:\RedTeam\ReverseShellPayload.exe)
 
-Optionally, change the $entryName to a custom name.
+-Optionally, change the $entryName to a custom name
 
 Run the Script:
 
@@ -43,11 +41,9 @@ Execute the script:
 
         .\Persistence.ps1
 
-        The script will create a registry entry that ensures the payload runs at every user logon.
+-The script will create a registry entry that ensures the payload runs at every user logon.
 
 Building and Deploying the C# Payload
-
- Prepare the Code:
 
  Open the ReverseShellPayload.cs file.
 
