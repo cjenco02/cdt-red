@@ -31,9 +31,9 @@ The PowerShell script (persist.ps1) adds a registry entry under the current user
 
 Run the Script:
 
-Open PowerShell on the target machine with appropriate privileges.
+-Open PowerShell on the target machine with appropriate privileges.
 
-Execute the script:
+-Execute the script:
 
         .\Persistence.ps1
 
@@ -41,12 +41,12 @@ The script will create a registry entry that ensures the payload runs at every u
 
 Building and Deploying the C# Payload
 
- Open the ReverseShellPayload.cs file
+-Open the ReverseShellPayload.cs file
 
- Update the variables attackerIP and attackerPort with your controlled server’s IP address and port number.
+-Update the variables attackerIP and attackerPort with your controlled server’s IP address and port number.
 
 Compile the Code:
-Open a Developer Command Prompt (or any terminal with csc.exe available).
+-Open a Developer Command Prompt (or any terminal with csc.exe available)
 
 Compile the code using:
 
@@ -56,16 +56,16 @@ This will produce an executable (e.g., ReverseShellPayload.exe).
 
 Deploy the Payload:
 
-Place the compiled payload in the desired directory (e.g., C:\RedTeam\).
+-Place the compiled payload in the desired directory (e.g., C:\RedTeam\).
 
-Ensure the path in your PowerShell persistence script points to this executable.
+-Ensure the path in your PowerShell persistence script points to this executable.
 
 Test the Reverse Shell:
 
-Set up a listener on your controlled server. For example, using Netcat:
+-Set up a listener on your controlled server. For example, using Netcat:
 
     nc -lvnp 4444
 
-Log off and log back on (or restart) the target machine to trigger the persistence mechanism.
+-Log off and log back on (or restart) the target machine to trigger the persistence mechanism.
 
-Once the payload executes, it will connect back to your listener and you should receive a reverse shell.
+-Once the payload executes, it will connect back to your listener and you should receive a reverse shell.
