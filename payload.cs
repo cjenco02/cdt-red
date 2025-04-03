@@ -64,6 +64,7 @@ namespace ReverseShellPayload
             }
             catch (Exception ex)
             {
+                throw ex;
                 // Optionally handle errors or log them in a controlled environment
                 // In a stealth scenario, you might silently ignore errors.
             }
