@@ -1,5 +1,5 @@
 # Windows Reverse Shell Spawner
-Components
+
 PowerShell Persistence Script
 
 The PowerShell script (persist.ps1) adds a registry entry under the current user’s run key to ensure that a specified payload is executed at every user logon.
@@ -23,9 +23,9 @@ The PowerShell script (persist.ps1) adds a registry entry under the current user
 -Customizable IP address and port to suit your testing environment
 
 # Usage
--Open Persistence.ps1 in your favorite text editor
+-Open persist.ps1 in your favorite text editor
 
--Update the variable $payloadPath with the full path to your payload executable (e.g., C:\RedTeam\ReverseShellPayload.exe)
+-Update the variable $payloadPath with the full path to your payload executable (e.g., C:\path\to\payload.exe)
 
 -Optionally, change the $entryName to a custom name
 
@@ -35,33 +35,27 @@ Run the Script:
 
 -Execute the script:
 
-        .\Persistence.ps1
+        .\persist.ps1
 
 The script will create a registry entry that ensures the payload runs at every user logon.
 
-Building and Deploying the C# Payload
+# Building and Deploying the C# Payload
 
--Open the ReverseShellPayload.cs file
-
--Update the variables attackerIP and attackerPort with your controlled server’s IP address and port number.
-
-Compile the Code:
-
--Open a Developer Command Prompt (or any terminal with csc.exe available)
+Change the target IP in payload.cs to that of the target machine
 
 Compile the code using:
 
-    csc.exe /target:winexe ReverseShellPayload.cs
+    csc.exe /target:winexe payload.cs
 
-This will produce an executable (e.g., ReverseShellPayload.exe).
+This will produce an executable (e.g., payload.exe).
 
 Deploy the Payload:
 
--Place the compiled payload in the desired directory (e.g., C:\RedTeam\).
+-Place the compiled payload in the desired directory (e.g., C:\path\to\desired\directory\).
 
 -Ensure the path in your PowerShell persistence script points to this executable.
 
-Test the Reverse Shell:
+# Test the Reverse Shell:
 
 -Set up a listener on your controlled server. For example, using Netcat:
 
